@@ -3,25 +3,21 @@ import { customer } from '../customer.class';
 import { CustomerService } from '../customer.service';
 
 @Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  selector: 'app-customer-edit',
+  templateUrl: './customer-edit.component.html',
+  styleUrls: ['./customer-edit.component.css']
 })
-export class CreateComponent {
-  cust: customer = new customer();
+export class CustomerEditComponent {
+  custs!: customer;
   
   constructor(
     private custsvc: CustomerService
   ){}
 
-  save(): void {
-
-  }
-
   ngOnInit(): void {
-    this.custsvc.create(this.cust).subscribe({
+    this.custsvc.get(1).subscribe({
       next: (res) => {
-        console.log("Added");
+        console.log(res);
       },
       error: (err) => {
         console.error(err);

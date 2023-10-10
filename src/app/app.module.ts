@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home/home.component';
 import { AboutComponent } from './about/about/about.component';
 import { E404Component } from './e404/e404/e404.component';
 import { CreateComponent } from './customer/create/create.component';
+import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
+import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { CreateComponent } from './customer/create/create.component';
     HomeComponent,
     AboutComponent,
     E404Component,
-    CreateComponent
+    CreateComponent,
+    CustomerDetailsComponent,
+    CustomerEditComponent
   ],
   imports: [
     BrowserModule,
