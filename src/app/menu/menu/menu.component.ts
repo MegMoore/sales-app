@@ -10,6 +10,7 @@ export class MenuComponent {
   menus: Menu[] = [
     new Menu("Home", "/home"),
     new Menu("Customers", "/cust/list"),
-    new Menu("About", "/about")
+    new Menu("About", "/about"),
+    new Menu("Login", "/login")
   ];
 }

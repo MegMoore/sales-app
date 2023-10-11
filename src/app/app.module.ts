@@ -16,7 +16,9 @@ import { CustomerEditComponent } from './customer/customer-edit/customer-edit.co
 import { BoolPipe } from './misc/bool.pipe';
 import { SearchCustomerPipe } from './customer/search-customer.pipe';
 import { SortPipe } from './misc/sort.pipe';
-import { EmployeeComponent } from './employee/employee/employee.component';
+import { EmployeeComponent } from './employee/employee-list/employee.component';
+import { SearchEmployeePipe } from './employee/search-employee.pipe';
+import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { EmployeeComponent } from './employee/employee/employee.component';
     BoolPipe,
     SearchCustomerPipe,
     SortPipe,
-    EmployeeComponent
+    EmployeeComponent,
+    SearchEmployeePipe,
+    EmployeeLoginComponent
   ],
   imports: [
     BrowserModule,

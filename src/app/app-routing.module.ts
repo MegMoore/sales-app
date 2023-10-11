@@ -7,6 +7,7 @@ import { E404Component } from './e404/e404/e404.component';
 import { CreateComponent } from './customer/create/create.component';
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
+import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full"},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: "cust/details/:id", component: CustomerDetailsComponent},
   {path: "cust/edit/:id", component: CustomerEditComponent},
   {path: "about", component: AboutComponent},
+  {path: "login", component: EmployeeLoginComponent},
   {path: "**", component: E404Component}  
 ];
 
