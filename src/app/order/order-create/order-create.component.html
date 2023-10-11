@@ -1,0 +1,32 @@
+<h1>Create Order</h1>
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="ord.id" ></td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input [(ngModel)]="ord.date" type="text"></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><input [(ngModel)]="ord.description" type="text"></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td><input  [(ngModel)]="ord.total" type="text"></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input [(ngModel)]="ord.status" type="text"></td>
+        </tr>
+        <tr>
+            <td>CustomerId</td>
+            <td><input [(ngModel)]="ord.customerId" type="text"></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Submit</button>
+</div>

@@ -19,6 +19,8 @@ import { SortPipe } from './misc/sort.pipe';
 import { EmployeeComponent } from './employee/employee-list/employee.component';
 import { SearchEmployeePipe } from './employee/search-employee.pipe';
 import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
+import { OrderCreateComponent } from './order/order-create/order-create.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { EmployeeLoginComponent } from './employee/employee-login/employee-login
     SortPipe,
     EmployeeComponent,
     SearchEmployeePipe,
-    EmployeeLoginComponent
+    EmployeeLoginComponent,
+    OrderCreateComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
