@@ -10,6 +10,7 @@
             <th><button (click)="sortOrder('name')" class="btn btn-link">Name</button></th>
             <th><button (click)="sortOrder('sales')" class="btn btn-link">Sales</button></th>
             <th><button (click)="sortOrder('active')" class="btn btn-link">Active</button></th>
+            <th>Actions</th>
         </tr>
     </thead>
             <tbody>
@@ -19,7 +20,6 @@
                     <td>{{c.name}}</td>
                     <td>{{c.sales | currency}}</td>
                     <td>{{c.active | bool: locale}}</td>
-                    <td>Actions</td>
                    <td><a routerLink="/cust/details/{{c.id}}">details</a></td> ||
                    <td><a routerLink="/cust/edit/{{c.id}}">edit</a></td>
                 </tr>

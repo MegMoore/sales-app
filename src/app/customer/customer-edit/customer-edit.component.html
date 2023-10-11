@@ -1,2 +1,29 @@
+
 <h1>Customer Edits</h1>
-<h1>Customer Edits</h1>
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="custs.id" readonly></td>
+        </tr>
+        <tr>
+            <td>Code</td>
+            <td><input [(ngModel)]="custs.code" type="text"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]="custs.name" type="text"></td>
+        </tr>
+        <tr>
+            <td>Sales</td>
+            <td><input  [(ngModel)]="custs.sales" type="text"></td>
+        </tr>
+        <tr>
+            <td>Active</td>
+            <td><input [(ngModel)]="custs.active" type="checkbox"></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Submit</button>
+</div>

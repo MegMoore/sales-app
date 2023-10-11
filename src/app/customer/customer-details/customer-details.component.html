@@ -1,1 +1,28 @@
-<p>customer-details works!</p>
+<h1>Customer Details</h1>
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="cust.id" readonly></td>
+        </tr>
+        <tr>
+            <td>Code</td>
+            <td><input [(ngModel)]="cust.code" readonly></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]="cust.name" readonly></td>
+        </tr>
+        <tr>
+            <td>Sales</td>
+            <td><input  [(ngModel)]="cust.sales" readonly></td>
+        </tr>
+        <tr>
+            <td>Active</td>
+            <td><input [(ngModel)]="cust.active" readonly></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Delete</button>
+</div>
