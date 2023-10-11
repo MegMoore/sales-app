@@ -1,4 +1,4 @@
-import { BoolPipe } from '../bool.pipe';
+import { BoolPipe } from './bool.pipe';
 
 describe('BoolPipe', () => {
   it('create an instance', () => {
