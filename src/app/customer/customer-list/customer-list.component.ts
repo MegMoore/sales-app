@@ -9,7 +9,21 @@ import { CustomerService } from '../customer.service';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent {
+
+    pageTitle = "Customer List";
     custs!: customer[];
+    locale: string = 'en';
+    substr: string = "";
+    sortCol: string = 'name';
+    sortAsc: boolean = true;
+    sortOrder(col: string): void {
+      if(col === this.sortCol){
+        this.sortAsc = !this.sortAsc;
+        return;
+      }
+      this.sortCol = col;
+      this.sortAsc = true;
+    }
   
     constructor(
       private custsvc: CustomerService

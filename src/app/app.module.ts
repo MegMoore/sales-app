@@ -13,6 +13,9 @@ import { E404Component } from './e404/e404/e404.component';
 import { CreateComponent } from './customer/create/create.component';
 import { CustomerDetailsComponent } from './customer/customer-details/customer-details.component';
 import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
+import { BoolPipe } from './misc/bool.pipe';
+import { SearchCustomerPipe } from './customer/search-customer.pipe';
+import { SortPipe } from './misc/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { CustomerEditComponent } from './customer/customer-edit/customer-edit.co
     E404Component,
     CreateComponent,
     CustomerDetailsComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    BoolPipe,
+    SearchCustomerPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,
