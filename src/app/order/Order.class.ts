@@ -1,4 +1,5 @@
 import { customer } from "../customer/customer.class";
+import { Orderline } from "../orderline/orderline.class";
 
 
 export class order {
@@ -10,5 +11,7 @@ export class order {
    // foreign key 
     customerId: number = 0;
     customer: customer | null = null;
+
+    orderLines: Orderline[] | null = null;
 
 }

@@ -2,7 +2,7 @@
     <app-menu></app-menu>
     <a routerLink="/ord/create">Create New</a> |
     <input [(ngModel)]="ordstr" placeholder="search">
-    <table class="table table-sm table-striped">
+    <table class="table table-sm table-striped" *ngIf="ord">
         <thead>
         <tr>
             <th><button (click)="sortOrder('id')" class="btn btn-link">Id</button></th>

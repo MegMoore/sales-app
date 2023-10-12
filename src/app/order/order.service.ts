@@ -35,6 +35,11 @@ export class OrderService {
   change(ord: order): Observable<any> {
     return this.http.put(`${this.url}/${ord.id}`, ord) as Observable<any>
   }
+ 
+  backorder(ord: order): Observable<any> {
+    return this.http.put(`${this.url}/${ord.id}/backorder`, ord) as Observable<any>
+  }
+
   
   //delete order
   remove(id: number): Observable<any>{

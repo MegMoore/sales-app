@@ -1,1 +1,48 @@
-<p>order-lines works!</p>
+<div id="component">
+    <table class="table table-sm" *ngIf="ord" >
+        
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Customer</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ ord.id }}</td>
+                <td>{{ ord.description }}</td>
+                <td>{{ ord.status }}</td>
+                <td>{{ ord.total | currency}}</td>
+                <td>{{ ord.customer?.name }}</td>
+                <td>
+                    <button (click)="backorder()" class="btn btn-primary btn-sm">Backorder</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a routerLink="/ordl/create/{{ ord.id }}">Create New</a>
+    <table class="table table-sm table-striped" *ngIf="ord">
+        <thead>
+            <th>Id</th>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>SubTotal</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of ord.orderLines">
+                <td>{{x.id}}</td>
+                <td>{{x.item?.name}}</td>
+                <td>{{x.quantity}}</td>
+                <td>{{x.item?.price | currency}}</td>
+                <td>{{x.quantity * x.item?.price! | currency}}</td>
+                <td>Actions</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
