@@ -9,6 +9,7 @@ import { CustomerDetailsComponent } from './customer/customer-details/customer-d
 import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
 import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
 import { OrderCreateComponent } from './order/order-create/order-create.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full"},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: "about", component: AboutComponent},
   {path: "login", component: EmployeeLoginComponent},
   {path: "ord/create", component: OrderCreateComponent},
+  {path: "ord/list", component: OrderListComponent},
   {path: "**", component: E404Component}  
 ];
 

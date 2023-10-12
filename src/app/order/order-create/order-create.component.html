@@ -3,11 +3,11 @@
     <tbody>
         <tr>
             <td>Id</td>
-            <td><input [(ngModel)]="ord.id" ></td>
+            <td><input [(ngModel)]="ord.id" readonly></td>
         </tr>
         <tr>
             <td>Date</td>
-            <td><input [(ngModel)]="ord.date" type="text"></td>
+            <td><input [(ngModel)]="ord.date" type="datetime-local"></td>
         </tr>
         <tr>
             <td>Description</td>
@@ -22,8 +22,13 @@
             <td><input [(ngModel)]="ord.status" type="text"></td>
         </tr>
         <tr>
-            <td>CustomerId</td>
-            <td><input [(ngModel)]="ord.customerId" type="text"></td>
+            <td>Customer</td>
+            <td>
+                <select [(ngModel)]="ord.customerId">
+                    <option *ngFor="let x of custs" value="{{x.id}}">{{x.name}}</option>
+                </select>
+
+            </td>
         </tr>
     </tbody>
 </table>

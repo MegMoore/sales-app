@@ -9,6 +9,17 @@ import { OrderService } from '../order.service';
 })
 export class OrderListComponent {
   ord!: order[];
+  ordstr: string = "";
+    sortCol: string = 'id';
+    sortAsc: boolean = true;
+    sortOrder(col: string): void {
+      if(col === this.sortCol){
+        this.sortAsc = !this.sortAsc;
+        return;
+      }
+      this.sortCol = col;
+      this.sortAsc = true;
+    }
 
   constructor(
     private ordsvc: OrderService

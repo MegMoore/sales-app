@@ -12,6 +12,6 @@ export class MenuComponent {
     new Menu("Customers", "/cust/list"),
     new Menu("About", "/about"),
     new Menu("Login", "/login"),
-    new Menu("Create Order", "/ord/create")
+    new Menu("Order", "/ord/list")
   ];
 }

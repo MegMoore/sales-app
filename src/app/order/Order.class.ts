@@ -1,9 +1,14 @@
+import { customer } from "../customer/customer.class";
+
+
 export class order {
     id: number = 0;
     date: string = "";
     description: string = "";
     total: number = 0;
-    status: boolean = true;
+    status: string = "New";
+   // foreign key 
     customerId: number = 0;
+    customer: customer | null = null;
 
 }
