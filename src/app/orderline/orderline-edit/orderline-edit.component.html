@@ -1,0 +1,22 @@
+<h1>Orderline Edits</h1>
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="ordl.id" readonly></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td><input [(ngModel)]="ordl.quantity" type="text"></td>
+        </tr>
+        <tr>
+            <td>Items</td>
+            <td>
+                <select [(ngModel)]="ordl.itemId" ><option *ngFor="let x of itms" value="{{x.id}}">{{x.name}}</option></select></td>
+        </tr>
+        
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Submit</button>
+</div>

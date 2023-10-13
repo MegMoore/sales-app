@@ -24,7 +24,7 @@
             </tr>
         </tbody>
     </table>
-    <a routerLink="/ordl/create/{{ ord.id }}">Create New</a>
+    <a routerLink="/ordl/create/{{ ord.id }}" *ngIf="ord">Create New</a>
     <table class="table table-sm table-striped" *ngIf="ord">
         <thead>
             <th>Id</th>
@@ -34,14 +34,20 @@
             <th>SubTotal</th>
             <th>Actions</th>
         </thead>
-        <tbody>
+        <tbody *ngIf="ord && ord.orderLines">
             <tr *ngFor="let x of ord.orderLines">
                 <td>{{x.id}}</td>
                 <td>{{x.item?.name}}</td>
                 <td>{{x.quantity}}</td>
                 <td>{{x.item?.price | currency}}</td>
                 <td>{{x.quantity * x.item?.price! | currency}}</td>
-                <td>Actions</td>
+                
+                    <td><a routerLink="/ordl/edits/{{x.id}}">edit</a>
+                        
+                        <button (click)="remove(x.id)">Delete</button>
+                        <button *ngIf="showverify && x.id === saveid" (click)="verifyremove(x.id)">Verify</button>
+                    </td>
+                 
             </tr>
         </tbody>
     </table>

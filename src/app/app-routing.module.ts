@@ -13,6 +13,9 @@ import { OrderListComponent } from './order/order-list/order-list.component';
 import { OrderDetailsComponent } from './order/order-details/order-details.component';
 import { OrderLinesComponent } from './order/order-lines/order-lines.component';
 import { OrderlineCreateComponent } from './orderline/orderline-create/orderline-create.component';
+import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
+import { OrderlinesDetailsComponent } from './orderline/orderlines-details/orderlines-details.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full"},
@@ -29,10 +32,14 @@ const routes: Routes = [
   {path: "ord/create", component: OrderCreateComponent},
   {path: "ord/list", component: OrderListComponent},
   {path: "ord/details/:id", component: OrderDetailsComponent},
-  {path: "ord/lines/:id", component: OrderLinesComponent},
-
-  {path: "ordl/create:oid", component: OrderlineCreateComponent},
   
+  {path: "ord/lines/:id", component: OrderLinesComponent},
+  {path: "ordl/create/:oid", component: OrderlineCreateComponent},
+  {path: "ordl/details/:id", component: OrderlinesDetailsComponent},
+  {path: "ordl/edits/:id", component: OrderlineEditComponent},
+  
+  {path: "item/list", component: ItemListComponent},
+
   {path: "**", component: E404Component}  
 ];
 

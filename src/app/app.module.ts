@@ -26,6 +26,12 @@ import { OrderDetailsComponent } from './order/order-details/order-details.compo
 import { OrderEditComponent } from './order/order-edit/order-edit.component';
 import { OrderLinesComponent } from './order/order-lines/order-lines.component';
 import { OrderlineCreateComponent } from './orderline/orderline-create/orderline-create.component';
+import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
+import { OrderlinesDetailsComponent } from './orderline/orderlines-details/orderlines-details.component';
+import { ItemCreateComponent } from './item/item-create/item-create.component';
+import { ItemEditComponent } from './item/item-edit/item-edit.component';
+import { ItemDetailsComponent } from './item/item-details/item-details.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +56,13 @@ import { OrderlineCreateComponent } from './orderline/orderline-create/orderline
     OrderDetailsComponent,
     OrderEditComponent,
     OrderLinesComponent,
-    OrderlineCreateComponent
+    OrderlineCreateComponent,
+    OrderlineEditComponent,
+    OrderlinesDetailsComponent,
+    ItemCreateComponent,
+    ItemEditComponent,
+    ItemDetailsComponent,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,

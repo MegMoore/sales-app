@@ -1,0 +1,18 @@
+<div id="component">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of itms">
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

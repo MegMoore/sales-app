@@ -3,6 +3,8 @@ import { SystemServiceService } from 'src/app/system.service';
 import { OrderService } from '../order.service';
 import { ActivatedRoute } from '@angular/router';
 import { order } from '../Order.class';
+import { Orderline } from 'src/app/orderline/orderline.class';
+import { OrderlineService } from 'src/app/orderline/orderline.service';
 
 @Component({
   selector: 'app-order-lines',
@@ -13,12 +15,32 @@ export class OrderLinesComponent {
 // properties
 
   ord!: order;
+  ordl!: Orderline;
 
   constructor(
     private syssvc: SystemServiceService,
     private ordsvc: OrderService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private ordlsvc: OrderlineService
   ) { }
+    saveid: number = 0;
+    remove(id: number): void {
+      this.showverify = !this.showverify;
+      this.saveid = id;
+    }
+  
+    showverify: boolean = false;
+    verifyremove(id: number): void {
+     this.ordlsvc.remove(id).subscribe({
+        next: (res) => {
+          console.log("deleted");
+          this.refresh();      
+        },
+        error: (err) => {
+          console.error(err);
+        }
+      });
+    }
 
   backorder(): void {
     this.ordsvc.backorder(this.ord).subscribe({
