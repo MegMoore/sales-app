@@ -1,10 +1,13 @@
 <div id="component">
-    <table>
+    <app-menu></app-menu>
+    <a routerLink="/item/create" class="btn btn-primary">Create New Item</a>
+    <input [(ngModel)]="substr" placeholder="search">
+    <table class="table table-sm table-striped">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Price</th>
+                <th><button (click)="sortOrder('id')" class="btn btn-link">Id</button></th>
+                <th><button (click)="sortOrder('name')" class="btn btn-link">Name</button></th>
+                <th><button (click)="sortOrder('price')" class="btn btn-link">Price</button></th>
             </tr>
         </thead>
         <tbody>
@@ -12,6 +15,9 @@
                 <td>{{i.id}}</td>
                 <td>{{i.name}}</td>
                 <td>{{i.price}}</td>
+                <td><a routerLink="/item/details/{{i.id}}">details</a> |
+                   <a routerLink="/item/edit/{{i.id}}">edit</a>
+                </td>
             </tr>
         </tbody>
     </table>

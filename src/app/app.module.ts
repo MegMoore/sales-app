@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,6 +32,12 @@ import { ItemCreateComponent } from './item/item-create/item-create.component';
 import { ItemEditComponent } from './item/item-edit/item-edit.component';
 import { ItemDetailsComponent } from './item/item-details/item-details.component';
 import { ItemListComponent } from './item/item-list/item-list.component';
+import { SearchItemPipe } from './item/search-item.pipe';
+import { AppInitService } from './app/app-init.service';
+
+export const startupServiceFactory = (appinit: AppInitService) => {
+  return () => appinit.getSettings();
+}
 
 @NgModule({
   declarations: [
@@ -62,7 +68,8 @@ import { ItemListComponent } from './item/item-list/item-list.component';
     ItemCreateComponent,
     ItemEditComponent,
     ItemDetailsComponent,
-    ItemListComponent
+    ItemListComponent,
+    SearchItemPipe
   ],
   imports: [
     BrowserModule,
@@ -70,7 +77,14 @@ import { ItemListComponent } from './item/item-list/item-list.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AppInitService, {
+      provide: APP_INITIALIZER,
+      useFactory: startupServiceFactory,
+      deps: [AppInitService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

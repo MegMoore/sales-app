@@ -2,16 +2,18 @@ import { Injectable } from '@angular/core';
 import { employee } from './employee.class';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AppInitService } from '../app/app-init.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-  url: string = "http://localhost:5000/api/employees";
+  get url() { return `${this.init.config.baseurl}/api/employees`;  } 
 
   constructor(
 
-    private http: HttpClient
+    private http: HttpClient,
+    private init: AppInitService
   ) { }
 
   //method/function to get all employees

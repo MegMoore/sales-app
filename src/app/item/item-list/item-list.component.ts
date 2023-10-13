@@ -10,7 +10,20 @@ import { ItemService } from '../item.service';
 export class ItemListComponent {
 
     pageTitle = "Item List";
-    itms! = Item[];
+    itms!: Item[];
+    locale: string = 'en';
+    substr: string = "";
+    sortCol: string = 'id';
+    sortAsc: boolean = true;
+    sortOrder(col: string): void {
+      if(col === this.sortCol){
+        this.sortAsc = !this.sortAsc;
+        return;
+      }
+      this.sortCol = col;
+      this.sortAsc = true;
+    }
+  
 
     constructor(
       private itmsvc: ItemService

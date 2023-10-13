@@ -16,6 +16,7 @@ import { OrderlineCreateComponent } from './orderline/orderline-create/orderline
 import { OrderlineEditComponent } from './orderline/orderline-edit/orderline-edit.component';
 import { OrderlinesDetailsComponent } from './orderline/orderlines-details/orderlines-details.component';
 import { ItemListComponent } from './item/item-list/item-list.component';
+import { ItemCreateComponent } from './item/item-create/item-create.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full"},
@@ -39,6 +40,8 @@ const routes: Routes = [
   {path: "ordl/edits/:id", component: OrderlineEditComponent},
   
   {path: "item/list", component: ItemListComponent},
+  {path: "item/create", component: ItemCreateComponent},
+
 
   {path: "**", component: E404Component}  
 ];

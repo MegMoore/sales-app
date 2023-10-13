@@ -1,1 +1,28 @@
-<p>item-create works!</p>
+<h1>Create New Item</h1>
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="itm.id" readonly></td>
+        </tr>
+        <tr>
+            <td>UPC</td>
+            <td><input [(ngModel)]="itm.upc" type="text"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]="itm.name" type="text"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input [(ngModel)]="itm.price" type="number"></td>
+        </tr>
+        <tr>
+            <td>Active</td>
+            <td><input [(ngModel)]="itm.active" type="checkbox"></td>
+        </tr>
+    </thead>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>
